@@ -161,6 +161,7 @@ view_ident ()
   char *val = NULL;
   int x = 0;
   int y = 0;
+  int i = 0;
 
   g_mode = VIEW_IDENT;
 
@@ -210,9 +211,12 @@ view_ident ()
   val = vc_get_value (vc);
   wprintw (sub, "Revision    : %s\n", val ? val : "");
 
-  vc = vc_get_next_by_name (g_v, VC_NOTE);
-  val = vc_get_value (vc);
-  wprintw (sub, "Note        : %s\n", val ? val : "");
+  for (i = 1, vc = g_v; i <= 5; i++)
+    {
+      vc = vc_get_next_by_name (vc, VC_NOTE);
+      val = vc_get_value (vc);
+      wprintw (sub, "Note        : %s\n", val ? val : "");
+    }
 
   touchwin (win);
   wrefresh (sub);
