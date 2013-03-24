@@ -1,0 +1,145 @@
+Rolo 011 (2003-05-20)
+
+* Searching is now fixed and the results are appearing properly on
+the screen.  Searches are now performed case-insensitive.
+
+* Added ability to search forwards or backwards for the next match.
+
+* There is now a dependency on libvc if you want to perform your
+own build of rolo.  You can download libvc from the rolo web site
+(see the README file for the web address).
+
+* The mutt_vc_query utility is no longer distributed with rolo.  It
+is now a separate package.  You can download mutt_vc_query from the
+rolo web site (see the README file for the web address).
+
+Rolo 010 (2003-05-04)
+
+* Added a new utility for mutt's `query_command' called `mutt_vc_query'.
+This utility will allow a mutt user to query the email addresses
+in `contacts.vcf' with the `Q' command in mutt.  See the README
+file for how to implement.
+
+Rolo 009 (2003-04-26)
+
+* Preferred telephone number and email addresses are now displayed
+in the index screen (but only if the parameter is specified exactly
+as TYPE=pref).  A cleaner way of parsing out the parameter values
+is in the works.
+
+* Added a few more `convenience functions' to the vcard API.
+
+* Help screen has been updated.
+
+* Man page has been updated with the mdoc template format as specified
+in mdoc(7).
+
+Rolo 008 (2003-04-20)
+
+* Revamped the entire libvcard with a brand-spanking-new API.  Now
+there are only two typedefs that the user programmer needs to know
+about: vcard_component and vcard_component_param.
+
+* Added more telephone numbers and email addresses to the
+telecommunications display screen.
+
+* Added ability to use the left and right arrow keys to switch
+between the 5 groups in the view screen.
+
+* Source code will also be distributed in Tar/Bzip2 format from now
+on.
+
+Rolo 007 (2003-04-10)
+
+* The view screen has now been simplified to 5 groupings.  The help
+screen has been updated to reflect these changes.
+
+Rolo 006 (2003-04-04)
+
+* The view screen is now split-up into 8 screens for grouping the
+contact entry into managable viewing sections.  More vCard properties
+have been added to the view screen as a result of this grouping
+format--entries such as longitude and latitude.  The grouping format
+is based on the sections described in the RFC 2426 specifications
+for vCard version 3.0.
+
+* VCard entries are now read from file with the vCard lines in the
+order that they appear.  This eliminates the funny problem of having
+the vcard lines displayed in the reverse order that they appear in
+the contacts.vcf file when editing.
+
+* A man page has been created for rolo(1).
+
+* Updated the view help screen to match the functionality implemented.
+
+Rolo 005 (2003-03-29)
+
+* A datafile is created upon the startup of rolo if it does not
+already exist.  The datafile is at $HOME/.rolo/contacts.vcf.
+
+* Fixed a core dump upon adding the first entry in an empty datafile.
+
+* Performance improvements for those cases where an edit, add, or
+delete is aborted--the index refresh is spared in those circumstances.
+
+* Updated the help screens to match the functionality implemented
+thus far.
+
+Rolo 004 (2003-03-23)
+
+* Added `edit' functionality.  Press the `e' key in the index screen
+or the view screen to use.  The editor defined in the environment
+variable EDITOR will be used for editing the entry.
+
+* Users can now add a new entry by pressing the `a' key in the index
+screen.  The editor defined in the environment variable EDITOR will
+be used for creating the new entry.
+
+* Added `delete' functionality.  Press the `d' key in the index
+screen to use.  It will only ask for confirmation once before
+proceeding and there is no way to undo the delete, so be careful.
+
+* And, of course, all these extra features are documented in the
+index help screen which can be reached by pressing the `h' key.
+
+Rolo 003 (2003-03-07)
+
+* Now sorts ascending by family name on startup.
+
+* Added `sort' functionality to the index screen.  Press the `s'
+key to use.
+
+* Added `filter' functionality to the index screen.  Press the `f'
+key to use.
+
+* Added `remove filter' functionality to the index screen.  Type
+`F' to use.
+
+* And, of course, all these extra features are documented in the
+index help screen which can be reached by pressing the `h' key.
+
+* Can resize to larger dimensions in an xterm window without crashing.
+
+Rolo 002 (2003-02-28)
+
+* The source code is now distributed with a proper `configure'
+script.  Refer to the `INSTALL' file for details on how to use it
+to compile and install Rolo.  This means Rolo should be able to run
+on a more diverse list of operating systems and environments (thanks
+to autoconf and automake).
+
+* The help screens should be more relevant to the screens they give
+help about.
+
+* An example data file can be found in the `test' directory.  After
+rolo is installed, the example data file can be loaded by using the
+`-f' option on rolo.
+
+Rolo 001 (2003-02-22)
+
+* This is the first release of the Rolo package.  It has been
+developed and tested on FreeBSD 4.7.  Keep in mind that you will
+need a file in your `%{HOME}/.rolo/' directory titled `contacts.vcf'
+and in the same format as the `data.vcf' file format (which is in
+vCard 3.0 format).  This release only has capabilities to read from
+the file and display the entries to screen.

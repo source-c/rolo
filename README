@@ -1,0 +1,39 @@
+rolo - contact management software
+release 011
+
+Copyright (C) 2003  Andrew Hsu
+
+Rolo keeps track of your contacts and display them to you with a
+text-based menu.  Rolo strives to be a well-constructed tool for
+complimenting text-based email programs-such as mutt.  It utilizes
+the vCard version 3.0 format for storing its contacts and it
+interfaces with the end-user through a NCurses front-end.
+
+Rolo is written in ANSI C and uses Automake and Autoconf to manage
+its build system.  Rolo makes uses of the NCurses library and the
+menu library that compliments NCurses.  It has been developed and
+tested thoroughly on FreeBSD, but the code was designed to be as
+non-platform specific as possible.
+
+To add a new contact in rolo, type `a' in the index screen.  This
+will pop open your "favorite editor" so you can compose a new vCard
+file by hand.  This may be a little low-level for some people, so
+an example vCard file has been provided in the `test' directory.
+If rolo is installed using an rpm file, the example file can be
+found in: /usr/share/doc/rolo-011/contacts.vcf
+
+Directory contents:
+
+  doc/ .............. Documentation for Rolo.
+
+  src/ .............. Source code for the rolo user interface.
+
+  test/ ............. Test data for rolo.
+
+This software is maintained on SourceForge:
+http://rolo.sf.net/
+
+See the `INSTALL' file for building and installation instructions.
+See the `COPYING' file for copying conditions.
+
+Send bugs, questions, or comments to Andrew Hsu <ahsu@users.sf.net>.
